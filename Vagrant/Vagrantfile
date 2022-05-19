@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+#UBUNTU MACHINE ->
+
+  config.vm.define "node1" do |node1|
+    node1.vm.box = "ubuntu/trusty64"
+    node1.vm.network "public_network", ip: "192.168.0.160", bridge: "Intel(R) Ethernet Connection (7) I219-V"
+    node1.vm.provider "virtualbox" do |vb|
+      vb.name = "ubuntu-node"
+    end
+  end
+  
+#DEBIAN ->
+  config.vm.define "node2" do |node2|
+    node2.vm.box = "debian/jessie64"
+    node2.vm.network "public_network", ip: "192.168.0.161", bridge: "Intel(R) Ethernet Connection (7) I219-V"
+    node2.vm.provider "virtualbox" do |vb|
+      vb.name = "debian-node"
+    end 
+  end
+end
