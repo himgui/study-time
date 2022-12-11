@@ -4,4 +4,4 @@ while True:
     response =input()
     if response == 'exit':
         sys.exit()
-    print('Your exited the by typing' + response + '.')
+    print('Your exited the by typing ' + response + '.')
