@@ -9,6 +9,7 @@ def collatz(number):
         print(result)
         return(result)
 
-n = input("Type a number: ")
+# Will use the Collatz function until it finds 1.
+n = input("Type a number: ") 
 while n != 1:
     n = collatz(int(n))
