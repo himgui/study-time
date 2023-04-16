@@ -1,0 +1,27 @@
+Vagrant.configure("2") do |config|
+    
+  # VM Creation - Ansible Controller
+  config.vm.define "ansible-controller" do |ac|
+        ac.vm.box = "centos/7"
+        ac.vm.network "public_network", ip: "192.168.1.115", bridge: "Realtek PCIe 2.5GbE Family Controller"
+        ac.vm.provider "virtualbox" do |ac|
+          ac.name = "ansible-controller"
+        end
+      end
+  # VM Creation -> Target 1
+  config.vm.define "ansible-target1" do |at1|
+        at1.vm.box = "centos/7"
+        at1.vm.network "public_network", ip: "192.168.1.116", bridge: "Realtek PCIe 2.5GbE Family Controller"
+        at1.vm.provider "virtualbox" do |at1|
+          at1.name = "ansible-target1"
+      end
+    end
+  # VM Creation -> Target 2    
+  config.vm.define "ansible-target2" do |at2|
+        at2.vm.box = "centos/7"
+        at2.vm.network "public_network", ip: "192.168.1.117", bridge: "Realtek PCIe 2.5GbE Family Controller"
+        at2.vm.provider "virtualbox" do |at2|
+          at2.name = "ansible-target2"
+      end
+    end
+  end
