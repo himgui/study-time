@@ -38,3 +38,4 @@ Vagrant.configure("2") do |config|
 # Set PasswordAuthentication to yes and unhash it.
 # Set ChallengeResponseAuthentication and unhash it.
 # sudo systemctl restart sshd
+# sudo yum install sshpass -y (necessary for password authentication, but in non-interactive mode.)
