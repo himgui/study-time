@@ -14,8 +14,26 @@ Simple explanation of the basics of Ansible. I used [Vagrant](https://developer.
 
 ### YAML
 
-Whats is YAML file? Ansible playbooks are written in YAML.
-How Key Value Pair is set?
+Stands for **Y**et **A**nother **M**arkup **L**anguage. 
+It's a data serialization language where we write the configuration file.
+
+**Dictionary**
+Dictionary is a data structure that allows us to store data in key-value pairs, one example:
+
+Formula_OneDrivers: 
+  Brazil: Senna
+  US: Hamilton
+  Monac: Leclerc
+
+
+**Arrays/Lists**
+An array/lists should be a group of multiple similar values.
+
+Formula_OneTeams:
+  - Ferrari
+  - Mercedes
+  - Red Bull
+ 
 How Array/Lists are set?
 How a Dicionary is set in Playbook?
 
