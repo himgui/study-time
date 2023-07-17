@@ -25,7 +25,6 @@ Formula_OneDrivers:
   US: Hamilton
   Monac: Leclerc
 
-
 **Arrays/Lists**
 An array/lists should be a group of multiple similar values.
 
@@ -33,46 +32,29 @@ Formula_OneTeams:
   - Ferrari
   - Mercedes
   - Red Bull
- 
-How Array/Lists are set?
-How a Dicionary is set in Playbook?
-
-- Spacing, Identation on YAML
-
 
 ### Ansbile Playbooks
 
-Whats is Ansible Playbooks?
-Play?
-Task?
-Modules?
- * System
- * Commands
- * Files
- * Database
- * Cloud
- * Windows
+Ansible playbooks can be described as a list of tasks that will be executed on hosts.
 
-Idempotency
+#### Task ####
+Is an action tha will be handled to the target host.
 
-### Basic Commands
+#### Modules ####
+Seperated code blocks that can control system resources or execute commands.
 
-* Execute Ansible Playbook
-Command: ansible-playbook yourplaybook.yml or ansible
-
-`ansbile <hosts> -a <command>`
-`ansible all -a "/sbin/reboot"`
-`ansbile <hosts> -m <module>`
-`ansible target1 -m ping`
 
 ### Ansible Variables
-To do...
-### Conditionals
-To do...
-### Loops
-To do...
+
+You can simply define variables by: 
+
+vars:
+  my-var: test
+
+The variables can be used by {{test}}.
+
 ### Ansible Roles
-To do...
+Roles will help on to reuse and share code within an Ansible infrastructure. Simplifying the way you can load vars, files, tasks and other stuff without having to write all code again.
 
 # Vagrant Machines
 - [Vagrant File](https://github.com/himgui/study-time/blob/main/ansible/Vagrantfile)
