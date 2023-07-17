@@ -1,0 +1,8 @@
+virtualmachines:
+  hosts:
+    ansible-controller:
+      ansible_host: 192.168.1.115
+    ansible-target1:
+      ansible_host: 192.168.1.116
+    ansible-target2:
+      ansbile_host: 192.168.1.117
