@@ -60,7 +60,7 @@ Roles will help on to reuse and share code within an Ansible infrastructure. Sim
 - [Vagrant File](https://github.com/himgui/study-time/blob/main/ansible/Vagrantfile)
 
 ## Steps to install Ansbile on CentOS Machines
-`sudo yum update -y`
+`sudo yum update -y`\n
 `sudo yum install -y python3`
 `curl https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip.py`
 `python3 get-pip.py --user`
