@@ -21,6 +21,7 @@ It's a data serialization language where we write the configuration file.
 Dictionary is a data structure that allows us to store data in key-value pairs, one example:
 
 Formula_OneDrivers: 
+
   Brazil: Senna
   US: Hamilton
   Monac: Leclerc
@@ -29,6 +30,7 @@ Formula_OneDrivers:
 An array/lists should be a group of multiple similar values.
 
 Formula_OneTeams:
+
   - Ferrari
   - Mercedes
   - Red Bull
@@ -74,4 +76,5 @@ SSH Error: Permission denied (publickey,gssapi-keyex,gssapi-with-mic) Fixed by e
 Set PasswordAuthentication to yes and unhash it.
 Set ChallengeResponseAuthentication and unhash it.
 `sudo systemctl restart sshd`
+
 `sudo yum install sshpass -y (necessary for password authentication, but in non-interactive mode.)`
