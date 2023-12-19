@@ -4,10 +4,23 @@
 Print a doc about school activities
 """
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
-room_one = ["Veiga", "Dudu", "Endrick","Gomez","Ze","Weverton"]
-room_two = ["Jhon Jhon","L. Guilherme", "Breno Lopes","Rios"]
+# TODO: Refactor all code below using dictionaries. Reference on the product_registration.py script
+
+school = {
+    "room_number": ["One", "Two"],
+    "room_activitie": ["English Class", "Music Class","Dance Class"],    
+}
+activitie_one = {
+    "students": ["Veiga", "Dudu", "Endrick","Gomez","Ze","Weverton"]
+    # Stopped here ->
+    #"school": room_activitie[0]
+}
+
+activitie_two = {
+    "students": ["Jhon Jhon","L. Guilherme", "Breno Lopes","Rios"]
+}
 
 english_class = ["Dudu", "Endrick","Gomez", "Jhon Jhon","L. Guilherme"]
 music_class = ["Veiga", "Dudu", "Rios"]

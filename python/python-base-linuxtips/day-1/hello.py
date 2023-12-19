@@ -3,17 +3,19 @@
 """
 Best hello world app.
 """
-__version__= "0.0.1"
+__version__= "0.1.2"
 __author__= "Guilherme"
 __license__= "Unlicensed"
 
 import os
 
 current_language = os.getenv("LANG")[:5]
-msg="Palmeiras"
+#current_language = "es_SP"
 
-if current_language == "pt_BR":
-    msg = "Olá mundo!"
-elif current_language == "en_US":
-    msg = "This is America"
-print(msg)
+msg= {
+    "pt_BR": "Olá, Mundo",
+    "en_US": "Hello, World",
+    "es_SP": "Holá, mundo"
+}
+
+print(msg[current_language])
