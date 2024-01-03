@@ -14,22 +14,52 @@ __version__= "0.1.0"
 __author__= "Guilherme"
 __license__= "Unlicensed"
 
-welcome_msg = "Welcome to the Prefix Calculator! Your daily math helper :)"
-print(welcome_msg)
-print("\n -------------------------------------- ")
+import sys
+arguments = sys.argv[1:]
 
-username = input("Start by writing your name: ")
-aftername_msg = f"Hey {username}, you can use the Prefix Calculator using sum, sub, mul or div."
+# TODO: Use exceptions
+if not arguments:
+    operation = input("operation type:")
+    n1 = input("n1")
+    n2 = input("n2")
+    arguments = [operation, n1, n2]
 
-print(aftername_msg)
+elif len(arguments) != 3:
+    print("Number of Arguments is invalid.")
+    print("E.g ´sum 5 5´ ")
+    sys.exit(1)
 
-operation_type = input("Enter the operation type yo want to do: ")
-n1 = int(input("Enter the first number: "))
-n2 = int(input("Enter the second number: "))
+operation, *nums = arguments
 
-if '+' in operation_type:
-    print(n1 + n2)
-elif '-' in operation_type:
-    print(n1 - n2)
-else:
-    print("No specified symbols found in the input.")
+valid_operations = ("sum", "sub", "mul", "div")
+if operation not in valid_operations:
+    print("Operation type is not valid.")
+    print(valid_operations)
+    sys.exit(1)
+
+validate_nums = []
+for num in nums:
+    # TODO: Use While loop + exceptions
+    if not num.replace(".","").isdigit():
+        print(f"Number is invalid {num}")
+        sys.exit(1)
+    if "." in num:
+        num = float(num)
+    else:
+        num =int(num)
+    validate_nums.append(num)
+
+n1, n2 = validate_nums
+
+#TODO: Function dictionary
+
+if operation == "sum":
+    result = n1 + n2
+elif operation == "sub":
+    result = n1 - n2
+elif operation == "mul":
+    result = n1 * n2
+elif operation == "div":
+    result = n1 / n2
+
+print(f"The result is {result}.")
