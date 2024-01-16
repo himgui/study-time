@@ -1,23 +1,35 @@
-email_tmpl = """
-Hello, %(name)s
-
-Are you interested in playing for %(team)s?
-
-Click now on this %(link)s
-
-This opportunity will give you %(text)s
-
-We have only %(spots)d available!
-
-Current Price is %(price).2f
 """
-clients = ["Abel","Endrick","Dudu","Veiga"]
+Send email to users.
+"""
 
-for client in clients:
+__version__ = "0.1.1"
+
+import sys
+import os
+
+arguments = sys.argv[1:]
+
+if not arguments:
+    print("Type the the file name of emails.")
+    sys.exit(1)
+
+filename = arguments[0]
+templatename = arguments[1]
+
+path = os.curdir
+filepath = os.path.join(path, filename)
+templatepath = os.path.join(path, templatename)
+
+for line in open(filepath):
+    name, email = line.split(",")
+
+
+    print(f"Sending the email to: {email}")
+    print()
     print(
-        email_tmpl
+        open(templatepath).read()
         % {
-            "name": client,
+            "name": name,
             "team": "Palmeiras",
             "text": "a lot of titles",
             "link": "palmeiras.com.br",

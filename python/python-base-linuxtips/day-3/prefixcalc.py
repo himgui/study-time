@@ -9,12 +9,17 @@ sub -> -
 mul -> *
 div -> /
 
+All results are saved in a log file (prefix.logs).
+
 """
 __version__= "0.1.0"
 __author__= "Guilherme"
 __license__= "Unlicensed"
 
 import sys
+import os
+from datetime import datetime
+
 arguments = sys.argv[1:]
 
 # TODO: Use exceptions
@@ -61,5 +66,13 @@ elif operation == "mul":
     result = n1 * n2
 elif operation == "div":
     result = n1 / n2
+
+path = os.curdir
+filepath = os.path.join(path, "prefix.log")
+timestamp = datetime.now().isoformat()
+user = os.getenv('USER', 'anonymous')
+
+with open(filepath, "a") as file_:
+    file_.write(f"{timestamp} - {user} - {operation},{n1}, {n2} = {result}\n")
 
 print(f"The result is {result}.")

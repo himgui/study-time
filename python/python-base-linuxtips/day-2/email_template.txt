@@ -1,0 +1,11 @@
+Hello, %(name)s
+
+Are you interested in playing for %(team)s?
+
+Click now on this %(link)s
+
+This opportunity will give you %(text)s
+
+We have only %(spots)d available!
+
+Current Price is %(price).2f
