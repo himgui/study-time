@@ -6,16 +6,27 @@ Working with errors cases with Python.
 import os
 import sys
 
-if os.path.exists("names.txt"):
-    print("The file exists.")
-    input("...") #Race Condition
-    names = open("names.txt").readlines()
-else:
-    print("[Error]: File not found.")
+# EAFP - Easy to Ask Forgiveness than permission > LBYL
+
+# Testing a error using raise.
+try:
+    raise RuntimeError("There is an error")
+except Exception as e:
+    print(str(e))
+
+try:
+    names = open("names.txt").readlines() # FileNotFoundError
+except (FileNotFoundError, ZeroDivisionError) as e:
+    print(f"[Error]: {str(e)}.")
     sys.exit(1)
-# LBYL - Look Before You Leap
-if len(names) >=3:
+    # TODO: Use retry
+else: 
+    print("Sucess!")
+finally:
+    print("Always execute this.")
+
+try:
     print(names[2])
-else:
+except:
     print("[Error]: Missing name in the list.")
     sys.exit(1)
