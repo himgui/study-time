@@ -9,6 +9,27 @@ __license__= "Unlicensed"
 
 import os
 import sys
+import logging
+
+
+log_level = os.getenv("LOG_LEVEL", "WARNING").upper()
+
+# Setting our instance to start logging.
+log = logging.Logger("logs.py", log_level)
+
+# Level setup
+ch = logging.StreamHandler()
+ch.setLevel(log_level)
+
+# Formatting logs
+fmt = logging.Formatter(
+    "%(asctime)s %(name)s %(levelname)s"
+    "l:%(lineno)d f:%(filename)s: %(message)s"
+)
+ch.setFormatter(fmt)
+# Logs destination
+log.addHandler(ch)
+
 
 arguments = {"lang": None, "count": 1}
 
@@ -16,9 +37,11 @@ for arg in sys.argv[1:]:
     try:
         key, value = arg.split("=")
     except ValueError as e:
-        # TODO: Logging
-        print(f"[ERROR] {str(e)}")
-        print("This is not a valid caracther. Use '='")
+        log.error(
+            "You need to use '=', you passed %s, try --key=value: %s",
+            arg,
+            str(e)
+        )
         sys.exit(1)
 
     key = key.lstrip("-").strip()
