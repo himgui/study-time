@@ -1,5 +1,5 @@
 """
-Pseudo Code - It won't work.
+Pseudo-code - It won't work.
 """
 
 __version__ = "0.1.0"
