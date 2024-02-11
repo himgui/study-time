@@ -3,3 +3,10 @@ My first note
 My second note
 	Tech	Python is cool
 My third  note	Tech	De novo, mais texto
+my new note	tech	golang
+Palmeiras	dudu	abel
+legal	nota	mais uma do gg
+legal3	teste	teste
+legal33	teste	teste
+legal333	etel	lreorq
+legal3334	teore	lasda

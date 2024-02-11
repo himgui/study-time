@@ -31,21 +31,37 @@ if not arguments:
 if arguments[0] not in cmds:
     print("Invalid command: {arguments[0]}")
 
-if arguments[0] == "read":
-    for line in open(filepath):
-        title, tag, text = line.split("\t")
-        if tag.lower() == arguments[1].lower():
-            print(f"Title: {title}")
-            print(f"Text: {text}")
-            print("-" * 30)
-            print()
 
-if arguments[0] == "new":
-    title = arguments[1] # TODO: Do exception
-    text = [
-        f"{title}",
-        input("Tag: ").strip(),        
-        input("Text: ").strip(),       
-    ]
-    with open(filepath, "a") as file_:
-        file_.write("\t".join(text) + "\n")
+while True:
+
+
+    if arguments[0] == "read":
+        try:
+            arg_tag = arguments[1].lower()
+        except IndexError:
+            arg_tag = input("What's the tag?").strip().lower()
+
+        for line in open(filepath):
+            title, tag, text = line.split("\t")
+            if tag.lower() == arg_tag:
+                print(f"Title: {title}")
+                print(f"Text: {text}")
+                print("-" * 30)
+                print()
+
+    if arguments[0] == "new":
+        try:
+            title = arguments[1]
+        except IndexError:
+            title = input("What's the title?").strip().title()
+        text = [
+            f"{title}",
+            input("Tag: ").strip(),        
+            input("Text: ").strip(),       
+        ]
+        with open(filepath, "a") as file_:
+            file_.write("\t".join(text) + "\n")
+    
+    cont = input(f"Do you want to continue {arguments[0]} with the notes? [N/Y]").strip().lower()
+    if cont != "y":
+        break
