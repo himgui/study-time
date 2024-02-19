@@ -33,8 +33,6 @@ if arguments[0] not in cmds:
 
 
 while True:
-
-
     if arguments[0] == "read":
         try:
             arg_tag = arguments[1].lower()

@@ -1,0 +1,4 @@
+1,Master suite,500
+2,Family room,200
+3,Single room,100
+4,Simple room,50
