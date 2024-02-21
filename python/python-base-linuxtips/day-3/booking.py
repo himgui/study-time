@@ -23,6 +23,9 @@ except FileNotFoundError:
     sys.exit(1)
 
 rooms = {}
+
+# Use functions to read the files.
+
 try:
     for line in open("rooms.txt"):
         code, name, price = line.strip().split(",")
