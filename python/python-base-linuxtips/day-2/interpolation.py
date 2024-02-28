@@ -6,6 +6,8 @@ __version__ = "0.1.1"
 
 import sys
 import os
+import smtplib
+from email.mime.text import MIMEText
 
 arguments = sys.argv[1:]
 
@@ -20,20 +22,27 @@ path = os.curdir
 filepath = os.path.join(path, filename)
 templatepath = os.path.join(path, templatename)
 
-for line in open(filepath):
-    name, email = line.split(",")
+with smtplib.SMTP(host="localhost", port=8025) as server:
 
+    for line in open(filepath):
+        name, email = line.split(",")
 
-    print(f"Sending the email to: {email}")
-    print()
-    print(
-        open(templatepath).read()
-        % {
-            "name": name,
-            "team": "Palmeiras",
-            "text": "a lot of titles",
-            "link": "palmeiras.com.br",
-            "spots": 5,
-            "price": 100.5,
-        }
-    )
+        text =  (
+            open(templatepath).read()
+            % {
+                "name": name,
+                "team": "Palmeiras",
+                "text": "a lot of titles",
+                "link": "palmeiras.com.br",
+                "spots": 5,
+                "price": 100.5,
+            }
+        )
+        from_ = "gui@mail.com"
+        to = ",".join([email])
+        message = MIMEText(text)
+        message["Subject"] = "Buy more!"
+        message["From"] = from_
+        message["To"] = to
+
+        server.sendmail(from_, to, message.as_string())

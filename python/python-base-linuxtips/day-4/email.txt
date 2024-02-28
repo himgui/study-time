@@ -1,0 +1,9 @@
+---------- MESSAGE FOLLOWS ----------
+b'From: myemail@gmail.com'
+b"To: ['destination1@server.com', 'destination2@server.com']"
+b'Subject: My python email'
+b'X-Peer: ::1'
+b''
+b'This is my email sent using Python.'
+b'<b> Hello World <\x08>'
+------------ END MESSAGE ------------
