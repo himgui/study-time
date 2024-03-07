@@ -37,5 +37,5 @@ triangles = [
 ]
 
 for t in triangles:
-    area = heron(*t)
+    area = heron(*t)    
     print(f" The triangle area is: {area}")
