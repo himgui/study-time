@@ -5,6 +5,14 @@ Created by Bruno Rocha.
 
 # A few notes
 
+### Debugging
+
+If you want to debug your python script, run it using -i.
+
+    python -i script.py
+
+This will allow you to debug any variables or functions running on this script.
+
 ## Modules
 
 A few modules used in the classes, full doc on [docs python.](https://docs.python.org/3/tutorial/modules.html#)
