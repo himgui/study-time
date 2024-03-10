@@ -13,6 +13,13 @@ If you want to debug your python script, run it using -i.
 
 This will allow you to debug any variables or functions running on this script.
 
+Funcions Debugging
+
+    print(locals())
+    print(globals())
+
+This will print local or global variables within a py file.
+
 ## Modules
 
 A few modules used in the classes, full doc on [docs python.](https://docs.python.org/3/tutorial/modules.html#)
